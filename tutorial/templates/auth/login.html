@@ -1,0 +1,44 @@
+{% extends "layout.html" %} {% block header %}
+<h1 class="text-2xl font-extrabold">{% block title %}Login{% endblock %}</h1>
+{% endblock %} {% block content %}
+<form
+  method="post"
+  action="{{url_for('login')}}"
+  class="py-5 my-5 flex flex-col gap-3"
+>
+  <div class="flex flex-col">
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="enter your email"
+      class="border border-neutral-700 rounded p-2"
+    />
+  </div>
+
+  <div class="flex flex-col">
+    <label>Password</label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="enter your password"
+      class="border border-neutral-700 rounded p-2"
+    />
+  </div>
+
+  <div class="mt-2">
+    <div class="mb-2">
+      <p>
+        Not registered?
+        <a class="text-indigo-800 underline" href="/register">Register now</a>
+      </p>
+    </div>
+
+    <button type="submit" class="py-2 bg-neutral-800 text-white rounded w-full">
+      Login
+    </button>
+  </div>
+</form>
+{% endblock %}
